@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  font-size: 100%;
+  background-color: lightgray;
+}
+
+.container {
+  width: 200px;
+  height: 100px;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  background-color: navy;
+}
+
+.typing-container {
+  position: relative;
+  display: inline-block;
+  left: calc(100px - ((105.56px + 10px) / 2));
+}
+.typing-container::before {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  right: -10px;
+  width: 10px;
+  height: 2px;
+  background-color: magenta;
+  animation: blinkCursor 0.5s steps(3) infinite;
+}
+
+@keyframes blinkCursor {
+  0%,
+  75% {
+    opacity: 1;
+  }
+  76%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.typing-content {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 5s steps(12) infinite; /*Jumlah karakter konten*/
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 105.56px; /*Panjang konten*/
+  }
+  100% {
+    width: 105.56px; /*Panjang konten*/
+  }
+}
