@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FavButton 02 [AMCODE]</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>FavButton 02</h1>
+      <div class="btn-1">
+        <a
+          href="#"
+          onmouseover="hoverScale(true)"
+          onmouseout="hoverScale(false)"
+        ></a>
+        <span class="text">Jelly</span>
+      </div>
+
+      <div class="btn-2">
+        <a href="#">Slide</a>
+      </div>
+
+      <div class="btn-3">
+        <a href="#">Shine</a>
+      </div>
+
+      <div class="btn-4">
+        <a href="#">
+          <div class="text-wrapper">
+            <span class="text">Move Up</span>
+            <span class="text">Move Up</span>
+          </div>
+        </a>
+      </div>
+
+      <img src="AM WM Magenta.png" alt="AM Water Mark" height="12" />
+    </div>
+
+    <script>
+      // Button 1
+      function hoverScale(isHover) {
+        var button = document.querySelector(".btn-1 a");
+
+        if (isHover) {
+          // Ketika tombol di-hover:
+
+          // Mengatur durasi transisi menjadi 0.2 detik (durasi transform 1)
+          button.style.transitionDuration = "0.2s";
+          // Tombol membesar 1.25 kali ukuran asli (transform 1)
+          button.style.transform = "scaleX(1.200) scaleY(1.170)";
+
+          setTimeout(function () {
+            // Setelah 0.2s
+            // Mengatur durasi transisi menjadi 0.1 detik (durasi transform 2)
+            button.style.transitionDuration = "0.1s";
+            // Tombol mengecil 1.12 kali ukuran asli (transform 2)
+            button.style.transform = "scaleX(1.160) scaleY(1.120)";
+
+            setTimeout(function () {
+              // Setelah 0.1s
+              // Durasi tetap 0.1s
+              // tombol membesar 1.18 kali ukuran asli
+              button.style.transform = "scaleX(1.190) scaleY(1.160)";
+
+              setTimeout(function () {
+                // Setelah 0.1s:
+                // Durasi tetap 0.1s
+                // Tombol kembali mengecil menjadi 1.1 kali ukuran asli
+                button.style.transform = "scaleX(1.180) scaleY(1.155)";
+
+                setTimeout(function () {
+                  // Setelah 0.1 detik lagi:
+                  // Mengatur durasi transisi menjadi 0.2 detik
+                  button.style.transitionDuration = "0.2s"; //durasi ke 3
+                  // tombol membesar menjadi 1.15 kali ukuran asli
+                  button.style.transform = "scaleX(1.185) scaleY(1.158)";
+                }, 100); //delay transform 5
+              }, 100); //delay transform 4
+            }, 100); //delay transform 3
+          }, 200); //delay transform 2
+        } else {
+          // Ketika hover dilepas:
+          // Mengatur durasi transisi menjadi 0.2 detik
+          button.style.transitionDuration = "0.15s";
+          // Mengembalikan tombol ke ukuran aslinya (scale 1)
+          button.style.transform = "scaleX(1) scaleY(1)";
+
+          setTimeout(function () {
+            // Setelah 0.2 detik:
+            button.style.transitionDuration = "0.1s";
+            // Memperbesar tombol sedikit menjadi 1.05 kali ukuran aslinya
+            button.style.transform = "scaleX(1.02) scaleY(1.03)";
+
+            setTimeout(function () {
+              // Setelah 0.1 detik lagi:
+              // Mengembalikan tombol mengecil ke ukuran aslinya (scale 1)
+              button.style.transform = "scaleX(0.995) scaleY(0.999)";
+
+              setTimeout(function () {
+                // Setelah 0.1 detik lagi:
+                // Mengembalikan tombol mengecil ke ukuran aslinya (scale 1)
+                button.style.transform = "scaleX(1) scaleY(1)";
+              }, 100);
+            }, 100);
+          }, 150);
+        }
+      }
+    </script>
+  </body>
+</html>

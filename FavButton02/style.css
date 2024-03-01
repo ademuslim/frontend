@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", monospace;
+  font-size: 100%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+:root {
+  --light: #eeeef2;
+  --light-transparent: rgba(238, 238, 242, 0.7);
+}
+
+.container {
+  width: 300px;
+  height: 534px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+  /* background-color: #0b0b45; */
+  background-color: #1d2145;
+}
+
+h1 {
+  color: var(--light);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 9.5px;
+  width: 100%;
+  height: 10px;
+  background-color: #d62e49;
+  z-index: -1; /* Mengatur z-index untuk meletakkan latar belakang di belakang teks */
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+/* Button 1 */
+.btn-1,
+.btn-2,
+.btn-3,
+.btn-4 {
+  width: 140px;
+  height: 40px;
+  display: flex;
+}
+.btn-1 {
+  position: relative;
+}
+.btn-1 a {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #272b4d;
+}
+
+.btn-1 .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  z-index: 10;
+  color: var(--light-transparent);
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+/* Button 2 */
+.btn-2 a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 2px;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-size: 300%;
+  background-image: linear-gradient(
+    120deg,
+    var(--light-transparent) 50%,
+    orange 50%
+  );
+  transition: all 0.6s;
+}
+.btn-2 a:hover {
+  color: black;
+  background-position: 100%;
+  transform: translateX(8px);
+}
+
+/* Button 3 */
+.btn-3 {
+  width: 130px;
+  height: 40px;
+}
+.btn-3 a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #338033;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--light);
+  transition: 0.6s;
+  overflow: hidden;
+}
+
+.btn-3 a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  width: 40px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  filter: blur(20px);
+  transform: translateX(-80px) skewX(-15deg);
+}
+
+.btn-3 a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  width: 20px;
+  height: 100%;
+  left: 30px;
+  top: 0;
+  opacity: 0;
+  filter: blur(20px);
+  transform: scaleX(-15deg);
+}
+
+.btn-3 a:hover {
+  background: #338033;
+  cursor: pointer;
+}
+
+.btn-3 a:hover::before {
+  transform: translateX(200px) skewX(-15deg);
+  opacity: 0.6;
+  transition: 0.7s;
+}
+
+.btn-3 a:hover::after {
+  transform: translateX(140px) skewX(-15deg);
+  opacity: 1;
+  transition: 0.7s;
+}
+
+/* Button 4 */
+.btn-4 a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 2px;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: pink;
+}
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 16px;
+  overflow: hidden;
+}
+
+.text-wrapper .text {
+  display: flex;
+  align-items: center;
+  height: 16px;
+  transition: 0.5s;
+}
+
+.btn-4 a:hover .text {
+  transform: translateY(-100%);
+}
